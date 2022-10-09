@@ -4,12 +4,14 @@ import { CourseSuggestChangeBtn } from './courseSuggestChangeBtn'
 
 const CourseSuggest = ({data}) => {
 
-    const [suggest,setSuggest]=useState(data[0].sector_name)
+    const [suggest,setSuggest]=useState('data[0].sector_name')
     // console.log(suggest,data.find(sector=>sector.sector_name==suggest).featured_courses)
-    const [suggestedCourse,setSuggestedCourse]=useState(data.find(sector=>sector.sector_name==suggest).featured_courses)
+    // const [suggestedCourse,setSuggestedCourse]=useState(data.find(sector=>sector.sector_name==suggest).featured_courses)
+    const [suggestedCourse,setSuggestedCourse]=useState([])
 
     useEffect(()=>{
-        setSuggestedCourse(data.find(sector=>sector.sector_name==suggest).featured_courses)
+        // setSuggestedCourse(data.find(sector=>sector.sector_name==suggest).featured_courses)
+        setSuggestedCourse([])
     },[suggest])
 
     
@@ -25,10 +27,10 @@ const CourseSuggest = ({data}) => {
 
         <div>
             <div>
-                {data.map(sector=>(
+                {/* {data.map(sector=>(
                     
                     <CourseSuggestChangeBtn key={sector.sector_name} setSuggest={setSuggest} name={sector.sector_name} />
-                ))}
+                ))} */}
                 
                 
             </div>
@@ -53,10 +55,10 @@ const CourseSuggest = ({data}) => {
                     </div>
                 </div>
                 <div className="my-4 flex flex-col flex-wrap md:flex-row">
-                   {
+                   {/* {
                        suggestedCourse.length? suggestedCourse.map((course,index)=>(<CourseCard key={index} data={course} />)) :
                         <CourseCard/>
-                   }
+                   } */}
                 </div>
             </div>
         </div>

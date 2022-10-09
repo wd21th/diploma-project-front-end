@@ -3,7 +3,8 @@ import { CourseCard } from './CourseCard'
 
  const CourseList = ({data}) => {
 
-    const courses=data.map(sector=>sector.featured_courses)
+    // const courses=data.map(sector=>sector.featured_courses)
+    const courses=[]
 
 
     return (
