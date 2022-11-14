@@ -1,16 +1,10 @@
 {
-    "/api/*": {
-        "target": "https://65ec-188-127-40-51.in.ngrok.io",
-        "secure": true,
-        "changeOrigin": true,
-        "logLevel": "debug",
-        "headers": {
-            "Connection": "keep-alive",
-            "ngrok-skip-browser-warning": "1"
-        }
-    },
-    "/__/*": {
-        "target": "https://65ec-188-127-40-51.in.ngrok.io",
-        "secure": false
-    }
+	"/api/*": {
+	 "target": "http://127.0.0.1:8000",
+	 "secure": false
+	},
+	"/__/*": {
+	 "target": "http://127.0.0.1:8000",
+	 "secure": false
+	}
 }
