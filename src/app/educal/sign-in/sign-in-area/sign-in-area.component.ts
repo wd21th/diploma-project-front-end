@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-sign-in-area',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInAreaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  user = {
+    email: '',
+    password: '',
+  }
+
+  submit(){
+    this.auth.check(this.user).subscribe((data: any) => {
+      console.log(data);
+      if(Object.keys(data).length){
+        // go to main page
+        
+      }
+    })
   }
 
 }
