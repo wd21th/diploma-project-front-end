@@ -76,7 +76,10 @@ import { ContactAreaComponent } from './contact/contact-area/contact-area.compon
 import { ContactInfoComponent } from './contact/contact-info/contact-info.component';
 import { BlogTwoComponent } from './home-two/blog-two/blog-two.component';
 
-
+import{ FormsModule } from '@angular/forms'
+;
+import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -157,6 +160,12 @@ import { BlogTwoComponent } from './home-two/blog-two/blog-two.component';
     RouterModule,
     MatTabsModule,
     SwiperModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    AuthService,
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
