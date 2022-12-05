@@ -1,8 +1,42 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<!-- use Tailwind -->
+<!-- add course button -->
+<!-- add course form -->
+<!-- newCourse: name, description, price -->
+  <form style="margin-left: 100px;">  
+      <input type="text" placeholder="Course Name" [(ngModel)]="newCourse.name" name="name">
+      <input type="text" placeholder="Course Description" [(ngModel)]="newCourse.description" name="description">
+      <input type="text" placeholder="Course Price" [(ngModel)]="newCourse.price" name="price">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="add()">Add Course</button>
+  </form>
 
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+
+<!-- iterate courses array -->
+<div *ngFor="let course of courses" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
+  <!-- course.name -->
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Course Name
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Course Name" [(ngModel)]="course.name">
+    <!-- course.price -->
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Course Price
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Course Price" [(ngModel)]="course.price">
+    <!-- course.description -->
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Course Description
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Course Description" [(ngModel)]="course.description">
+    <!-- button save -->
+
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" (click)="update(course)">
+      Save
+    </button>
+
+    <!-- button delete -->
+    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" (click)="delete(course.id)">
+      Delete
+    </button>
+</div>
+</div>
