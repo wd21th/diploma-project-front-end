@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "proxy": "ng serve --port 6060 --proxy-config proxy.conf.js --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
+    "deploy": "ng build --prod --base-href  \"https://wd21th.github.io/diploma-project-front-end\"/",
+    "gh-deploy": "npx angular-cli-ghpages --dir=dist/educal-angular",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
