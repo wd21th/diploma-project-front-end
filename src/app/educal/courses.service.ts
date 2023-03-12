@@ -10,6 +10,6 @@ export class CoursesService {
 constructor(private http: HttpClient,) { }
 
   getCourses(){
-    return this.http.get(environment.backendUrl+'/courses/');
+    return this.http.get(environment.backendUrl+'/api/courses/');
   }
 }
