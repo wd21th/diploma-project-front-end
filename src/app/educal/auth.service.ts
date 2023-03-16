@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,11 +12,11 @@ constructor(
 ) { }
 
   check(user: any){
-    return this.http.post('/users/check/', user);
+    return this.http.post(environment.backendUrl + 'api/login', user);
   }
 
   add(user: any){
-    return this.http.post('/users/add/', user);
+    return this.http.post(environment.backendUrl + 'api/register', user);
   }
 
 }
