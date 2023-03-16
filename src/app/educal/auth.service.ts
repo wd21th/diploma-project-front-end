@@ -12,11 +12,11 @@ constructor(
 ) { }
 
   check(user: any){
-    return this.http.post(environment.backendUrl + 'api/login', user);
+    return this.http.post(environment.backendUrl + '/api/login', user);
   }
 
   add(user: any){
-    return this.http.post(environment.backendUrl + 'api/register', user);
+    return this.http.post(environment.backendUrl + '/api/register', user);
   }
 
 }
