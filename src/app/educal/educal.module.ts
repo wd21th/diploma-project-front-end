@@ -80,6 +80,8 @@ import{ FormsModule } from '@angular/forms'
 ;
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CoursesService } from './courses.service';
+import { UsersService } from './users.service';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -165,6 +167,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     AuthService,
+    CoursesService,
+    UsersService
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

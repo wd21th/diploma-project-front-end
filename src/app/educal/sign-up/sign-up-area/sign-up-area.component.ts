@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { AuthService } from '../../auth.service';
 export class SignUpAreaComponent implements OnInit {
 
   constructor(
-    public auth: AuthService
+    public auth: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -19,11 +21,14 @@ export class SignUpAreaComponent implements OnInit {
     full_name: '',
     email: '',
     password: '',
+    courses: []
   }
 
   submit(){
     this.auth.add(this.user).subscribe((data: any) => {
       console.log(data);
+      localStorage.setItem('user', JSON.stringify(this.user));
+      this.router.navigateByUrl('/');
     })
   }
 }

@@ -51,9 +51,16 @@ export class HeaderTwoComponent implements OnInit {
     this.showPagesDropdown = !this.showPagesDropdown
   }
 
+  signIn : boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+    // get user data from local storage
+    let user = JSON.parse(localStorage.getItem('user') || '{}');
+    if(Object.keys(user).length){
+      this.signIn = true;
+    }
+
   }
 
 }

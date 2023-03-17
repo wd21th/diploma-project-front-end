@@ -1,4 +1,34 @@
 <div class="row">
+   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6" *ngFor="let course of courses">
+     <div class="course__item white-bg mb-30 fix">
+      <div class="course__thumb w-img p-relative fix">
+         <a>
+             <img [src]="course.image_url" alt="course">
+         </a>
+         <div class="course__tag">
+            <a href="#" [style.backgroundColor]="course.color">{{course.category}}</a>
+            <!--  [class]="'sky-blue'" -->
+         </div>
+      </div>
+      <div class="course__content">
+         <h3 class="course__title">
+            <a>{{course.name + ", " + course.id}}</a>
+         </h3>
+         <ng-container *ngIf="user.courses.includes(course.id); else buy_course">
+            <a class="btn btn-primary" [routerLink]="['/course', course.id]">Go to course</a>
+         </ng-container>
+
+         <ng-template #buy_course>
+            <button (click)="buacyCourse(course.id)">Get Course</button>
+         </ng-template>
+      </div>
+      <div class="course__more d-flex justify-content-between align-items-center">
+
+      </div>
+     </div>
+   </div>
+</div>
+<div class="row" *ngIf="true">
   <div *ngFor="let course of courseData" class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
     <div class="course__item white-bg mb-30 fix">
        <div class="course__thumb w-img p-relative fix">

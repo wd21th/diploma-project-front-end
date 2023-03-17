@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Autoplay } from "swiper";
+import { CoursesService } from '../../courses.service';
+import { UsersService } from '../../users.service';
 
 // install Swiper modules
 SwiperCore.use([ Pagination, Autoplay])
@@ -83,10 +86,42 @@ export class CourseDetailsAreaComponent implements OnInit {
       color: "orange"
     },
   ]
+  selectedCourse: any;
+  user: any = {}
 
-  constructor() { }
+  constructor(public coursesService: CoursesService, public usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute,) { }
 
   ngOnInit(): void {
+    this.selectedCourse = JSON.parse(localStorage.getItem('selectedCourse') || '{}');
+    
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    
+    this.user.courses = []
+
   }
 
+
+  enroll(courseId: number){
+  
+  let user = JSON.parse(localStorage.getItem('user') || '{}');
+  
+  if(Object.keys(user).length){
+    user.courses.push(courseId);
+    
+    
+    this.usersService.updateUser(user).subscribe((data:any) => {
+      
+      localStorage.setItem('user', JSON.stringify(data));
+      this.user = data;
+      // this.router.navigate(['']);
+      this.router.navigate([], {
+        relativeTo: this.activatedRoute
+      });
+    })
+
+  }else {
+    //  go to sign-in
+    this.router.navigate(['sign-in']);
+  }
+  }
 }
