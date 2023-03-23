@@ -82,6 +82,7 @@ import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CoursesService } from './courses.service';
 import { UsersService } from './users.service';
+import { SafeHtmlPipe } from './safeHtml.pipe';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -156,6 +157,7 @@ import { UsersService } from './users.service';
     ContactAreaComponent,
     ContactInfoComponent,
     BlogTwoComponent,
+    SafeHtmlPipe
   ],
   imports: [
     CommonModule,
