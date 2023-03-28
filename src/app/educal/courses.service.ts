@@ -12,4 +12,8 @@ constructor(private http: HttpClient,) { }
   getCourses(){
     return this.http.get(environment.backendUrl+'/api/courses/');
   }
+
+  getCourseById(id: any) {
+    return this.http.get(environment.backendUrl+'/api/courses/'+id);
+  }
 }
