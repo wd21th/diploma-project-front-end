@@ -26,8 +26,7 @@ export class SignUpAreaComponent implements OnInit {
 
   submit(){
     this.auth.add(this.user).subscribe((data: any) => {
-      console.log(data);
-      localStorage.setItem('user', JSON.stringify(this.user));
+      localStorage.setItem('uid', data.uid);
       this.router.navigateByUrl('/');
     })
   }

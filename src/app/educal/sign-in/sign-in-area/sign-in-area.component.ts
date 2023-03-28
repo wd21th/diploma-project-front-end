@@ -23,15 +23,9 @@ export class SignInAreaComponent implements OnInit {
   }
 
   submit(){
-    this.auth.check(this.user).subscribe((data: any) => {
-      console.log(data);
-      if(Object.keys(data).length){
-        // save user data in local storage
-        localStorage.setItem('user', JSON.stringify(data));
-        // go to main page
-        this.router.navigateByUrl('/');
-        
-      }
+    this.auth.check(this.user).subscribe((res: any) => {
+      localStorage.setItem('uid', res.uid);
+      this.router.navigateByUrl('/');
     })
   }
 
