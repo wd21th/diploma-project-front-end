@@ -79,10 +79,13 @@ import { BlogTwoComponent } from './home-two/blog-two/blog-two.component';
 import{ FormsModule } from '@angular/forms'
 ;
 import { AuthService } from './auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CoursesService } from './courses.service';
 import { UsersService } from './users.service';
 import { SafeHtmlPipe } from './safeHtml.pipe';
+import { AuthInterceptor } from './auth.interceptor';
+
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -170,7 +173,12 @@ import { SafeHtmlPipe } from './safeHtml.pipe';
   providers: [
     AuthService,
     CoursesService,
-    UsersService
+    UsersService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
 
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
