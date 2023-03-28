@@ -92,7 +92,11 @@ export class CourseDetailsAreaComponent implements OnInit {
   constructor(public coursesService: CoursesService, public usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    this.selectedCourse = JSON.parse(localStorage.getItem('selectedCourse') || '{}');
+    let id = this.activatedRoute.snapshot.params['id'];
+    
+    this.coursesService.getCourseById(id).subscribe((data: any) => {
+      this.selectedCourse = data;
+    })
     
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
     
