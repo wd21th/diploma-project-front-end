@@ -1120,7 +1120,7 @@
               alt=""
             />
           </div>
-          <div class="course__sidebar-widget-2 white-bg mb-20" *ngIf="!user?.courses.includes(selectedCourse.id)">
+          <div class="course__sidebar-widget-2 white-bg mb-20" *ngIf="!selectedCourse.isBought">
             <div class="course__video">
               <div class="course__video-thumb w-img mb-25">
                 <img src="assets/img/course/video/course-video.jpg" alt="" />
