@@ -36,7 +36,8 @@
               >
                 <div class="course__item white-bg mb-30 fix shadow-none">
                   <div class="course__thumb w-img p-relative fix">
-                    <a [routerLink]="['/course-details']">
+                    
+                    <a [routerLink]="['/course-details/'+course.id]">
                       <!-- <img src="{{ course.courseImage }}" alt="" /> -->
                       <img src="{{ course.image_url }}" alt="" />
                     </a>
@@ -65,7 +66,7 @@
                       </div>
                     </div>
                     <h3 class="course__title">
-                      <a [routerLink]="['/course-details']">
+                      <a [routerLink]="['/course-details/'+course.id]">
                         {{ course.name }}</a
                       >
                     </h3>
@@ -91,7 +92,7 @@
                       <!-- <span class="old-price">${{ course.oldPrice }}</span> -->
                     </div>
                     <div class="course__btn">
-                      <a [routerLink]="['/course-details']" class="link-btn" (click)="selectCourse(course)">
+                      <a [routerLink]="['/course-details/'+course.id]" class="link-btn" (click)="selectCourse(course)">
                         <span *ngIf="user?.courses; else notBuy">
                           {{
                             user?.courses.includes(course.id) ? 'Уже куплено' : 'Подробнее'
@@ -154,7 +155,7 @@
               >
                 <div class="course__item white-bg mb-30 fix shadow-none">
                   <div class="course__thumb w-img p-relative fix">
-                    <a [routerLink]="['/course-details']">
+                    <a [routerLink]="['/course-details/'+course.id]">
                       <img src="{{ course.courseImage }}" alt="" />
                     </a>
                     <div class="course__tag">
@@ -182,7 +183,7 @@
                       </div>
                     </div>
                     <h3 class="course__title">
-                      <a [routerLink]="['/course-details']">
+                      <a [routerLink]="['/course-details/'+course.id]">
                         {{ course.title }}</a
                       >
                     </h3>
@@ -205,7 +206,7 @@
                       <span class="old-price">${{ course.oldPrice }}</span>
                     </div>
                     <div class="course__btn">
-                      <a [routerLink]="['/course-details']" class="link-btn">
+                      <a [routerLink]="['/course-details/'+course.id]" class="link-btn">
                         Подробнее
                         <i class="far fa-arrow-right"></i>
                         <i class="far fa-arrow-right"></i>
@@ -230,7 +231,7 @@
               >
                 <div class="course__item white-bg mb-30 fix shadow-none">
                   <div class="course__thumb w-img p-relative fix">
-                    <a [routerLink]="['/course-details']">
+                    <a [routerLink]="['/course-details/'+course.id]">
                       <img src="{{ course.courseImage }}" alt="" />
                     </a>
                     <div class="course__tag">
@@ -257,7 +258,7 @@
                       </div>
                     </div>
                     <h3 class="course__title">
-                      <a [routerLink]="['/course-details']">
+                      <a [routerLink]="['/course-details/'+course.id]">
                         {{ course.title }}</a
                       >
                     </h3>
@@ -280,7 +281,7 @@
                       <span class="old-price">${{ course.oldPrice }}</span>
                     </div>
                     <div class="course__btn">
-                      <a [routerLink]="['/course-details']" class="link-btn">
+                      <a [routerLink]="['/course-details/'+course.id]" class="link-btn">
                         Подробнее
                         <i class="far fa-arrow-right"></i>
                         <i class="far fa-arrow-right"></i>
@@ -305,7 +306,7 @@
               >
                 <div class="course__item white-bg mb-30 fix shadow-none">
                   <div class="course__thumb w-img p-relative fix">
-                    <a [routerLink]="['/course-details']">
+                    <a [routerLink]="['/course-details/'+course.id]">
                       <img src="{{ course.courseImage }}" alt="" />
                     </a>
                     <div class="course__tag">
@@ -332,7 +333,7 @@
                       </div>
                     </div>
                     <h3 class="course__title">
-                      <a [routerLink]="['/course-details']">
+                      <a [routerLink]="['/course-details/'+course.id]">
                         {{ course.title }}</a
                       >
                     </h3>
@@ -355,7 +356,7 @@
                       <span class="old-price">${{ course.oldPrice }}</span>
                     </div>
                     <div class="course__btn">
-                      <a [routerLink]="['/course-details']" class="link-btn">
+                      <a [routerLink]="['/course-details/'+course.id]" class="link-btn">
                         Подробнее
                         <i class="far fa-arrow-right"></i>
                         <i class="far fa-arrow-right"></i>
@@ -380,7 +381,7 @@
               >
                 <div class="course__item white-bg mb-30 fix shadow-none">
                   <div class="course__thumb w-img p-relative fix">
-                    <a [routerLink]="['/course-details']">
+                    <a [routerLink]="['/course-details/'+course.id]">
                       <img src="{{ course.courseImage }}" alt="" />
                     </a>
                     <div class="course__tag">
@@ -407,7 +408,7 @@
                       </div>
                     </div>
                     <h3 class="course__title">
-                      <a [routerLink]="['/course-details']">
+                      <a [routerLink]="['/course-details/'+course.id]">
                         {{ course.title }}</a
                       >
                     </h3>
@@ -430,7 +431,7 @@
                       <span class="old-price">${{ course.oldPrice }}</span>
                     </div>
                     <div class="course__btn">
-                      <a [routerLink]="['/course-details']" class="link-btn">
+                      <a [routerLink]="['/course-details/'+course.id]" class="link-btn">
                         Подробнее
                         <i class="far fa-arrow-right"></i>
                         <i class="far fa-arrow-right"></i>
@@ -455,7 +456,7 @@
               >
                 <div class="course__item white-bg mb-30 fix shadow-none">
                   <div class="course__thumb w-img p-relative fix">
-                    <a [routerLink]="['/course-details']">
+                    <a [routerLink]="['/course-details/'+course.id]">
                       <img src="{{ course.courseImage }}" alt="" />
                     </a>
                     <div class="course__tag">
@@ -482,7 +483,7 @@
                       </div>
                     </div>
                     <h3 class="course__title">
-                      <a [routerLink]="['/course-details']">
+                      <a [routerLink]="['/course-details/'+course.id]">
                         {{ course.title }}</a
                       >
                     </h3>
@@ -505,7 +506,7 @@
                       <span class="old-price">${{ course.oldPrice }}</span>
                     </div>
                     <div class="course__btn">
-                      <a [routerLink]="['/course-details']" class="link-btn">
+                      <a [routerLink]="['/course-details/'+course.id]" class="link-btn">
                         Подробнее
                         <i class="far fa-arrow-right"></i>
                         <i class="far fa-arrow-right"></i>
