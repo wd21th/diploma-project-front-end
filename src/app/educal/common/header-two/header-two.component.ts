@@ -55,12 +55,10 @@ export class HeaderTwoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // get user data from local storage
-    let user = JSON.parse(localStorage.getItem('user') || '{}');
-    if(Object.keys(user).length){
+    let uid = localStorage.getItem('uid') || null;
+    if (uid){
       this.signIn = true;
     }
-
   }
 
 }
