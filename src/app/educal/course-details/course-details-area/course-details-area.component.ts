@@ -88,44 +88,22 @@ export class CourseDetailsAreaComponent implements OnInit {
   ]
   selectedCourse: any;
   user: any = {}
+  courseId: any;
 
   constructor(public coursesService: CoursesService, public usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute,) { }
 
   ngOnInit(): void {
     let id = this.activatedRoute.snapshot.params['id'];
-    
+    this.courseId = id;
     this.coursesService.getCourseById(id).subscribe((data: any) => {
       this.selectedCourse = data;
     })
-    
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
-    
-    this.user.courses = []
-
   }
 
 
-  enroll(courseId: number){
-  
-  let user = JSON.parse(localStorage.getItem('user') || '{}');
-  
-  if(Object.keys(user).length){
-    user.courses.push(courseId);
-    
-    
-    this.usersService.updateUser(user).subscribe((data:any) => {
-      
-      localStorage.setItem('user', JSON.stringify(data));
-      this.user = data;
-      // this.router.navigate(['']);
-      this.router.navigate([], {
-        relativeTo: this.activatedRoute
-      });
+  enroll(){
+    this.usersService.buyCourse(this.courseId).subscribe(() => {
+      window.location.reload();
     })
-
-  }else {
-    //  go to sign-in
-    this.router.navigate(['sign-in']);
-  }
   }
 }
