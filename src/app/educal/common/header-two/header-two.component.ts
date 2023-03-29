@@ -61,4 +61,9 @@ export class HeaderTwoComponent implements OnInit {
     }
   }
 
+  logout() {
+    localStorage.removeItem('uid');
+    this.signIn = false;
+  }
+
 }

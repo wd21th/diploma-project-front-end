@@ -172,6 +172,10 @@
             <div class="header__btn header__btn-2 ml-50 d-none d-sm-block" *ngIf="!signIn">
               <a [routerLink]="['/sign-up']" class="e-btn">Sign up</a>
             </div>
+            <div class="header__btn header__btn-2 ml-50 d-none d-sm-block" *ngIf="signIn">
+              <a (click)="logout()" class="e-btn">Logout</a>
+            </div>
+            
             <div class="sidebar__menu d-xl-none">
               <div
                 (click)="handleSidebar()"
