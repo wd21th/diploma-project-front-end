@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -58,8 +58,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { ContactMainComponent } from './contact/contact-main/contact-main.component';
 import { ContactAreaComponent } from './contact/contact-area/contact-area.component';
 import { ContactInfoComponent } from './contact/contact-info/contact-info.component';
-import{ FormsModule } from '@angular/forms'
-;
+import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CoursesService } from './courses.service';
@@ -123,7 +122,7 @@ import { AuthInterceptor } from './auth.interceptor';
     ContactMainComponent,
     ContactAreaComponent,
     ContactInfoComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
   ],
   imports: [
     CommonModule,
@@ -131,7 +130,7 @@ import { AuthInterceptor } from './auth.interceptor';
     MatTabsModule,
     SwiperModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     AuthService,
@@ -140,9 +139,9 @@ import { AuthInterceptor } from './auth.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class EducalModule { }
+export class EducalModule {}

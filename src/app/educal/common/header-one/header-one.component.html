@@ -115,17 +115,10 @@
             <div class="main-menu" [class.main-menu-3]="header__white">
               <nav id="mobile-menu" class="d-none d-xl-block">
                 <ul>
-                  <li class="has-dropdown">
+                  <li>
                     <a [routerLink]="['/']">Home</a>
-                    <ul class="submenu">
-                      <li><a [routerLink]="['/home']">Home Style 1</a></li>
-                      <li><a [routerLink]="['/home-two']">Home Style 2</a></li>
-                      <li>
-                        <a [routerLink]="['/home-three']">Home Style 3</a>
-                      </li>
-                    </ul>
                   </li>
-                  <li class="has-dropdown" *ngIf="false">
+                  <li *ngIf="false">
                     <a [routerLink]="['/courses']">Courses</a>
                     <ul class="submenu">
                       <li><a [routerLink]="['/courses']">Courses</a></li>
@@ -152,24 +145,15 @@
                     </ul>
                   </li>
                   <li class="has-dropdown">
-                    <a [routerLink]="['/courses']">Pages</a>
+                    <a [routerLink]="['/courses']">Explore</a>
                     <ul class="submenu">
                       <li><a [routerLink]="['/about']">About</a></li>
                       <li><a [routerLink]="['/instructor']">Instructor</a></li>
                       <li>
-                        <a [routerLink]="['/instructor-details']"
-                          >Instructor Details</a
-                        >
-                      </li>
-                      <li>
                         <a [routerLink]="['/event-details']">Event Details</a>
                       </li>
-                      <li><a [routerLink]="['/cart']">My Cart</a></li>
                       <li><a [routerLink]="['/wishlist']">My Wishlist</a></li>
-                      <li><a [routerLink]="['/checkout']">checkout</a></li>
-                      <li><a [routerLink]="['/sign-in']">Sign In</a></li>
-                      <li><a [routerLink]="['/sign-up']">Sign Up</a></li>
-                      <li><a [routerLink]="['/error']">Error</a></li>
+                      <li><a [routerLink]="['/checkout']">Checkout</a></li>
                     </ul>
                   </li>
                   <li><a [routerLink]="['/contact']">Contact</a></li>
@@ -248,7 +232,7 @@
                 <span (click)="handleAddCart('one')" class="cart-plus">+</span>
               </div>
               <div class="product__sm-price-wrapper">
-                <span class="product__sm-price">$46.00</span>
+                <span class="product__sm-price">Free</span>
               </div>
             </div>
             <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
@@ -269,7 +253,7 @@
                 <span (click)="handleAddCart('two')" class="cart-plus">+</span>
               </div>
               <div class="product__sm-price-wrapper">
-                <span class="product__sm-price">$32.00</span>
+                <span class="product__sm-price">₸ 5000</span>
               </div>
             </div>
             <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
@@ -296,7 +280,7 @@
                 >
               </div>
               <div class="product__sm-price-wrapper">
-                <span class="product__sm-price">$62.00</span>
+                <span class="product__sm-price">₸ 8000</span>
               </div>
             </div>
             <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
@@ -306,7 +290,7 @@
       <div class="cartmini__checkout">
         <div class="cartmini__checkout-title mb-30">
           <h4>Subtotal:</h4>
-          <span>$113.00</span>
+          <span>₸ 13.000</span>
         </div>
         <div class="cartmini__checkout-btn">
           <a [routerLink]="['/cart']" class="e-btn e-btn-border mb-10 w-100">
@@ -351,17 +335,6 @@
             [class.active]="showHomeDropdown"
           >
             <a (click)="homeDropdown()">Home</a>
-            <ul class="sub-menu" [class.active]="showHomeDropdown">
-              <li>
-                <a [routerLink]="['/']">Home Style 1</a>
-              </li>
-              <li>
-                <a [routerLink]="['/home-two']">Home Style 2</a>
-              </li>
-              <li>
-                <a [routerLink]="['/home-three']">Home Style 3</a>
-              </li>
-            </ul>
           </li>
 
           <li
@@ -400,20 +373,14 @@
             class="menu-item-has-children has-droupdown"
             [class.active]="showPagesDropdown"
           >
-            <a (click)="pagesDropDown()">Pages</a>
+            <a (click)="pagesDropDown()">Explore</a>
             <ul class="sub-menu" [class.active]="showPagesDropdown">
               <li><a [routerLink]="['/about']">About</a></li>
               <li><a [routerLink]="['/instructor']">Instructor</a></li>
-              <li>
-                <a [routerLink]="['/instructor-details']">Instructor Details</a>
-              </li>
               <li><a [routerLink]="['/event-details']">Event Details</a></li>
               <li><a [routerLink]="['/cart']">My Cart</a></li>
               <li><a [routerLink]="['/wishlist']">My Wishlist</a></li>
-              <li><a [routerLink]="['/checkout']">checkout</a></li>
-              <li><a [routerLink]="['/sign-in']">Sign In</a></li>
-              <li><a [routerLink]="['/sign-up']">Sign Up</a></li>
-              <li><a [routerLink]="['/error']">Error</a></li>
+              <li><a [routerLink]="['/checkout']">Checkout</a></li>
             </ul>
           </li>
 
