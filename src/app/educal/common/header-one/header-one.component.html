@@ -16,10 +16,9 @@
               <a [routerLink]="['/']">
                 <img
                   *ngIf="header__white && !headerSticky; else elseImg"
-                  src="assets/img/logo/logo-2.png"
+                  src="assets/img/logo/logo.svg"
                   alt="logo"
                 />
-
                 <ng-template #elseImg>
                   <img src="assets/img/logo/logo.svg" alt="logo" />
                 </ng-template>
@@ -81,22 +80,16 @@
                     </a>
                     <ul class="cat-submenu">
                       <li>
-                        <a [routerLink]="['/course-details']"
-                          >English Learning</a
-                        >
+                        <a [routerLink]="['/courses']">English Learning</a>
                       </li>
                       <li>
-                        <a [routerLink]="['/course-details']"
-                          >Web Development</a
-                        >
+                        <a [routerLink]="['/courses']">Web Development</a>
                       </li>
                       <li>
-                        <a [routerLink]="['/course-details']">Logo Design</a>
+                        <a [routerLink]="['/courses']">Logo Design</a>
                       </li>
                       <li>
-                        <a [routerLink]="['/course-details']"
-                          >Motion Graphics</a
-                        >
+                        <a [routerLink]="['/courses']">Motion Graphics</a>
                       </li>
                       <li>
                         <a [routerLink]="['/course-details']">Video Edition</a>
