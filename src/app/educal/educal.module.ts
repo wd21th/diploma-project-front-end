@@ -65,6 +65,7 @@ import { CoursesService } from './courses.service';
 import { UsersService } from './users.service';
 import { SafeHtmlPipe } from './safeHtml.pipe';
 import { AuthInterceptor } from './auth.interceptor';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -131,6 +132,7 @@ import { AuthInterceptor } from './auth.interceptor';
     SwiperModule,
     FormsModule,
     HttpClientModule,
+    TranslateModule
   ],
   providers: [
     AuthService,
