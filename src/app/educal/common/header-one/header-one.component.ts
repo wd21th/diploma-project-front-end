@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit,Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header-one',
@@ -16,7 +17,7 @@ export class HeaderOneComponent implements OnInit {
   showCoursesDropdown : boolean = false;
   showBlogDropdown : boolean = false;
   showPagesDropdown : boolean = false;
-
+  selectedLanguage : string = 'kz';
   // cart quantity
   count = 1;
   countTwo = 1;
@@ -87,12 +88,20 @@ export class HeaderOneComponent implements OnInit {
     this.showPagesDropdown = !this.showPagesDropdown
   }
 
-  constructor() {
+  constructor(
+    public translate: TranslateService
+  ) {
 
   }
 
   ngOnInit(): void {
+    this.selectedLanguage = localStorage.getItem('language') || 'kz';
+    this.translate.use(this.selectedLanguage);
+  }
 
+  onLanguageChange(language: string) {
+    this.translate.use(language);
+    localStorage.setItem('language', language);
   }
 
 }

@@ -107,26 +107,22 @@
           >
             <div class="main-menu" [class.main-menu-3]="header__white">
               <nav id="mobile-menu" class="d-none d-xl-block">
+                
                 <ul>
                   <li>
-                    <a [routerLink]="['/']">Home</a>
+                    <select 
+                      [ngModel]="selectedLanguage"
+                      (ngModelChange)="onLanguageChange($event)"
+                    >
+                      <option value="kz">Kz</option>
+                      <option value="ru">Ru</option>
+                      <option value="en">En</option>
+                    </select>
                   </li>
-                  <li *ngIf="false">
-                    <a [routerLink]="['/courses']">Courses</a>
-                    <ul class="submenu">
-                      <li><a [routerLink]="['/courses']">Courses</a></li>
-                      <li>
-                        <a [routerLink]="['/courses-list']">Course List</a>
-                      </li>
-                      <li>
-                        <a [routerLink]="['/courses-sidebar']"
-                          >Course sidebar</a
-                        >
-                      </li>
-                      <li>
-                        <a [routerLink]="['/course-details']">Course Details</a>
-                      </li>
-                    </ul>
+                  <li>
+                    <a [routerLink]="['/']">
+                      {{'home' | translate}}
+                    </a>
                   </li>
                   <li class="has-dropdown">
                     <a [routerLink]="['/blog']">Blog</a>
