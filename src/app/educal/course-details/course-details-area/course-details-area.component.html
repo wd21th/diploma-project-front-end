@@ -180,7 +180,7 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="course__instructor mb-45">
+                  <div *ngIf="selectedCourse.teachers" class="course__instructor mb-45">
                     <h3>Other Instructors</h3>
                     <ng-container *ngFor="let teacher of selectedCourse.teachers">
                       <div
@@ -204,8 +204,10 @@
                     </ng-container>
                   </div>
 
-                  <ng-container *ngFor="let video_lesson of selectedCourse.video_lessons">
-                    <div class="" [innerHTML]="video_lesson.iframe | safeHtml"></div>
+                  <ng-container *ngIf="selectedCourse.video_lessons">
+                    <ng-container *ngFor="let video_lesson of selectedCourse.video_lessons">
+                      <div class="" [innerHTML]="video_lesson.iframe | safeHtml"></div>
+                    </ng-container>
                   </ng-container>
                 </div>
               </div>
