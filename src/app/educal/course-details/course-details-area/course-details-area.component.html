@@ -180,55 +180,35 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="course__instructor mb-45">
+                  <div *ngIf="selectedCourse.teachers" class="course__instructor mb-45">
                     <h3>Other Instructors</h3>
-                    <div
-                      class="course__instructor-wrapper d-md-flex align-items-center"
-                    >
+                    <ng-container *ngFor="let teacher of selectedCourse.teachers">
                       <div
-                        class="course__instructor-item d-flex align-items-center mr-70"
+                        class="course__instructor-wrapper d-md-flex align-items-center"
                       >
-                        <div class="course__instructor-thumb mr-20">
-                          <img
-                            src="assets/img/course/teacher/teacher-3.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div class="course__instructor-content">
-                          <h3>Eleanor Fant</h3>
-                          <p>Instructor</p>
+                        <div
+                          class="course__instructor-item d-flex align-items-center mr-70"
+                        >
+                          <div class="course__instructor-thumb mr-20">
+                            <img
+                              [src]="teacher.avatar"
+                              alt=""
+                            />
+                          </div>
+                          <div class="course__instructor-content">
+                            <h3>{{ teacher.name }}</h3>
+                            <p>{{ teacher.role }}</p>
+                          </div>
                         </div>
                       </div>
-                      <div
-                        class="course__instructor-item d-flex align-items-center mr-70"
-                      >
-                        <div class="course__instructor-thumb mr-20">
-                          <img
-                            src="assets/img/course/teacher/teacher-2.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div class="course__instructor-content">
-                          <h3>Lauren Stamps</h3>
-                          <p>Teacher</p>
-                        </div>
-                      </div>
-                      <div
-                        class="course__instructor-item d-flex align-items-center mr-70"
-                      >
-                        <div class="course__instructor-thumb mr-20">
-                          <img
-                            src="assets/img/course/teacher/teacher-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div class="course__instructor-content">
-                          <h3>Jonquil Von</h3>
-                          <p>Associate</p>
-                        </div>
-                      </div>
-                    </div>
+                    </ng-container>
                   </div>
+
+                  <ng-container *ngIf="selectedCourse.video_lessons">
+                    <ng-container *ngFor="let video_lesson of selectedCourse.video_lessons">
+                      <div class="" [innerHTML]="video_lesson.iframe | safeHtml"></div>
+                    </ng-container>
+                  </ng-container>
                 </div>
               </div>
 
