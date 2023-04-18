@@ -84,7 +84,7 @@
                       class="course__status d-flex align-items-center"
                       *ngIf="!user?.courses?.includes(course.id)"
                     >
-                      <span [class]="course.color">${{ course.price }}</span>
+                      <span [class]="course.color">₸{{ course.price }}</span>
                       <!-- <span class="old-price">${{ course.oldPrice }}</span> -->
                     </div>
                     <div class="course__btn">
@@ -93,16 +93,10 @@
                         class="link-btn"
                         (click)="selectCourse(course)"
                       >
-                        <span *ngIf="user?.courses; else notBuy">
-                          {{
-                            user?.courses.includes(course.id)
-                              ? "Уже куплено"
-                              : "Подробнее"
-                          }}
+                        <span *ngIf="course?.isBought; else notBuy">
+                          Уже куплено
                         </span>
                         <ng-template #notBuy> Read more </ng-template>
-                        <!-- Подробнее -->
-                        <i class="far fa-arrow-right"></i>
                         <i class="far fa-arrow-right"></i>
                       </a>
                     </div>
