@@ -79,21 +79,11 @@
                       <span>{{ "category" | translate }}</span>
                     </a>
                     <ul class="cat-submenu">
-                      <li>
-                        <a [routerLink]="['/courses']">English Learning</a>
-                      </li>
-                      <li>
-                        <a [routerLink]="['/courses']">Web Development</a>
-                      </li>
-                      <li>
-                        <a [routerLink]="['/courses']">Logo Design</a>
-                      </li>
-                      <li>
-                        <a [routerLink]="['/courses']">Motion Graphics</a>
-                      </li>
-                      <li>
-                        <a [routerLink]="['/course-details']">Video Edition</a>
-                      </li>
+                      <ng-container *ngFor="let category of coursesService.categories">
+                        <li>
+                          <a [routerLink]="['/courses']" [queryParams]="{category: category['id']}">{{category['name'][translate.currentLang]}}</a>
+                        </li>
+                      </ng-container>
                     </ul>
                   </li>
                 </ul>
