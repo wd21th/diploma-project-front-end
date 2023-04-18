@@ -9,11 +9,19 @@ export class CoursesService {
 
 constructor(private http: HttpClient,) { }
 
+  categories = []
+
   getCourses(){
     return this.http.get(environment.backendUrl+'/api/courses/');
   }
 
   getCourseById(id: any) {
     return this.http.get(environment.backendUrl+'/api/courses/'+id);
+  }
+
+  getCategories() {
+    return this.http.get(environment.backendUrl + '/api/categories/').subscribe((data: any) => {
+      this.categories = data
+    })
   }
 }
