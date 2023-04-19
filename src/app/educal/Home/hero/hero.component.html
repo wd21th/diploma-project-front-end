@@ -16,7 +16,9 @@
             <p>
               {{ "learn" | translate }}
             </p>
-            <a [routerLink]="['/courses']" class="e-btn">View all courses</a>
+            <a [routerLink]="['/courses']" class="e-btn">{{
+              "view" | translate
+            }}</a>
           </div>
         </div>
         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -24,10 +26,9 @@
             <div class="hero__thumb-big mr-30">
               <img src="assets/img/hero/hero-5.jpg" alt="" />
               <div class="hero__quote hero__quote-animation">
-                <span>Abay Kunanbayuly</span>
+                <span>{{ "abay" | translate }}</span>
                 <h4>
-                  "If you work hard, you won't be disappointed, you won't be
-                  satisfied"
+                  {{ "if" | translate }}
                 </h4>
               </div>
             </div>

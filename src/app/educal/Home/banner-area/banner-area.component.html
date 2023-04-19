@@ -11,16 +11,15 @@
           }"
         >
           <div class="banner__content">
-            <span>Free</span>
+            <span>{{ "free" | translate }}</span>
             <h3 class="banner__title">
-              <a [routerLink]="['/course-details']"
-                >Web-development <br />
-                course</a
-              >
+              <a [routerLink]="['/course-details']">{{
+                "web-development" | translate
+              }}</a>
             </h3>
-            <a [routerLink]="['/courses']" class="e-btn e-btn-2"
-              >Jump to the course</a
-            >
+            <a [routerLink]="['/courses']" class="e-btn e-btn-2">{{
+              "jump-to" | translate
+            }}</a>
           </div>
           <div class="banner__thumb d-none d-sm-block d-md-none d-lg-block">
             <img src="/src/assets/img/banner/banner-1.jpg" alt="" />
@@ -31,20 +30,22 @@
         <div
           class="banner__item p-relative mb-40"
           [ngStyle]="{
-            background: 'url(assets/img/banner/banner-bg-2.jpg)',
+            background: 'url(assets/img/banner/banner-1.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }"
         >
           <div class="banner__content">
-            <span class="orange">New</span>
+            <span class="orange">{{ "new" | translate }}</span>
             <h3 class="banner__title">
-              <a [routerLink]="['/course-details']">Online <br />of IITU</a>
+              <a [routerLink]="['/course-details']">{{
+                "online-iitu" | translate
+              }}</a>
             </h3>
-            <a [routerLink]="['/courses']" class="e-btn e-btn-2"
-              >Jump to the course</a
-            >
+            <a [routerLink]="['/courses']" class="e-btn e-btn-2">{{
+              "jump-to" | translate
+            }}</a>
           </div>
           <div
             class="banner__thumb banner__thumb-2 d-none d-sm-block d-md-none d-lg-block"

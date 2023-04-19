@@ -165,7 +165,9 @@
               </form>
             </div>
             <div class="header__btn ml-20 d-none d-sm-block">
-              <a [routerLink]="['/contact']" class="e-btn">Try it free</a>
+              <a [routerLink]="['/sign-in']" class="e-btn">{{
+                "try-it-free" | translate
+              }}</a>
             </div>
             <div class="sidebar__menu d-xl-none">
               <div
@@ -203,17 +205,27 @@
 
       <div class="side-info-content sidebar-menu mm-menu">
         <ul>
+          <select
+            [ngModel]="selectedLanguage"
+            (ngModelChange)="onLanguageChange($event)"
+          >
+            <option value="kz">Kz</option>
+            <option value="ru">Ru</option>
+            <option value="en">En</option>
+          </select>
           <li class="menu-item-has-children">
-            <a href="/home">Home</a>
+            <a href="/home">{{ "home" | translate }}</a>
           </li>
 
           <li class="menu-item-has-children">
-            <a href="/courses">Courses</a>
+            <a href="/courses">{{ "explorer" | translate }}</a>
           </li>
 
           <li class="menu-item-has-children">
             <ul class="sub-menu">
-              <li><a [routerLink]="['/blog']">Blog</a></li>
+              <li>
+                <a [routerLink]="['/blog']">{{ "blog" | translate }}</a>
+              </li>
             </ul>
           </li>
 
@@ -221,16 +233,20 @@
             class="menu-item-has-children has-droupdown"
             [class.active]="showPagesDropdown"
           >
-            <a (click)="pagesDropDown()">Explore</a>
+            <a (click)="pagesDropDown()">{{ "explorer" | translate }}</a>
             <ul class="sub-menu" [class.active]="showPagesDropdown">
-              <li><a [routerLink]="['/about']">About</a></li>
+              <li>
+                <a [routerLink]="['/about']">{{ "blog" | translate }}</a>
+              </li>
               <li><a [routerLink]="['/instructor']">Instructor</a></li>
               <li><a [routerLink]="['/checkout']">Checkout</a></li>
             </ul>
           </li>
 
           <li>
-            <a [routerLink]="['/contact']" class="border-0">Contact</a>
+            <a [routerLink]="['/contact']" class="border-0">{{
+              "contact" | translate
+            }}</a>
           </li>
         </ul>
       </div>
