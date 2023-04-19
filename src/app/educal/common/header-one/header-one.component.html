@@ -238,8 +238,14 @@
               <li>
                 <a [routerLink]="['/about']">{{ "blog" | translate }}</a>
               </li>
-              <li><a [routerLink]="['/instructor']">Instructor</a></li>
-              <li><a [routerLink]="['/checkout']">Checkout</a></li>
+              <li>
+                <a [routerLink]="['/instructor']">{{
+                  "instructor" | translate
+                }}</a>
+              </li>
+              <li>
+                <a [routerLink]="['/checkout']">{{ "Checkout" | translate }}</a>
+              </li>
             </ul>
           </li>
 
@@ -253,7 +259,7 @@
 
       <div class="sidebar__search p-relative mt-40">
         <form action="#">
-          <input type="text" placeholder="Поиск..." />
+          <input type="text" placeholder="Search..." />
           <button type="submit"><i class="fad fa-search"></i></button>
         </form>
       </div>
