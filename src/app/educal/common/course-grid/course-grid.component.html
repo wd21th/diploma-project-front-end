@@ -9,10 +9,9 @@
           <img [src]="course['image_url']" alt="course" />
         </a>
         <div class="course__tag">
-          <a href="#" [style.backgroundColor]="course['color']">{{
-            course["category"]
+          <a href="#" [style.backgroundColor]="course['category']['color']">{{
+            course["category"]['name'][translate.currentLang]
           }}</a>
-          <!--  [class]="'sky-blue'" -->
         </div>
       </div>
       <div class="course__content">
@@ -20,7 +19,7 @@
           <a>{{ course["name"] + ", " + course["id"] }}</a>
         </h3>
         <ng-container
-          *ngIf="user.courses.includes(course['id']); else buy_course"
+          *ngIf="course['isBought']; else buy_course"
         >
           <a class="btn btn-primary">Go to course</a>
         </ng-container>
@@ -45,7 +44,7 @@
         <img src="{{ course['courseImage'] }}" alt="" />
       </a>
       <div class="course__tag">
-        <a href="#" [class]="course['color']">{{ course["category"] }}</a>
+        <a href="#" [class]="course['category']['color']">{{ course["category"]["name"][translate.currentLang] }}</a>
       </div>
     </div>
     <div class="course__content">
@@ -75,7 +74,7 @@
     </div>
     <div class="course__more d-flex justify-content-between align-items-center">
       <div class="course__status d-flex align-items-center">
-        <span [class]="course['color']">${{ course["price"] }}</span>
+        <span [class]="course['category']['color']">${{ course["price"] }}</span>
         <span class="old-price">${{ course["oldPrice"] }}</span>
       </div>
       <div class="course__btn">

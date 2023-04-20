@@ -1,6 +1,8 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../courses.service';
 import { UsersService } from '../../users.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-course-grid',
@@ -13,21 +15,25 @@ export class CourseGridComponent implements OnInit {
   courseData = [];
   constructor(
     public coursesService: CoursesService,
-    public usersService: UsersService
+    public usersService: UsersService,
+    public route: ActivatedRoute,
+    public translate: TranslateService
   ) {}
 
   ngOnInit(): void {
-    console.log('It works');
-    // get user from local storage
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
-
     this.getAllCourses();
   }
 
   getAllCourses() {
-    this.coursesService.getCourses().subscribe((data: any) => {
-      console.log(data);
-      this.courses = data;
+    this.route.queryParams.subscribe((params) => {
+      let queryString = '';
+      if (params['category']) {
+        queryString = '?category=' + params['category'];
+      }
+      this.coursesService.getCourses(queryString).subscribe((data: any) => {
+        
+        this.courses = data;
+      });
     });
   }
 
@@ -35,10 +41,10 @@ export class CourseGridComponent implements OnInit {
     // get user from local storage
     let user = JSON.parse(localStorage.getItem('user') || '{}');
     user.courses.push(courseId);
-    console.log('user :', user);
+    
 
     this.usersService.updateUser(user).subscribe((data: any) => {
-      console.log(data);
+      
       localStorage.setItem('user', JSON.stringify(data));
       this.user = data;
       this.getAllCourses();
