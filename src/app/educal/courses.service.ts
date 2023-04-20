@@ -11,8 +11,8 @@ constructor(private http: HttpClient,) { }
 
   categories = []
 
-  getCourses(){
-    return this.http.get(environment.backendUrl+'/api/courses/');
+  getCourses(queryString: string = ''){
+    return this.http.get(environment.backendUrl + '/api/courses' + queryString);
   }
 
   getCourseById(id: any) {
