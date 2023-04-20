@@ -4,13 +4,9 @@
       <div class="col-xxl-4 offset-xxl-4">
         <div class="section__title-wrapper mb-60 text-center">
           <h2 class="section__title">
-            Simple <br />
-            All Inclusive
-            <span class="yellow-bg yellow-bg-big"
-              >Pricing<img src="assets/img/shape/yellow-bg.png" alt=""
-            /></span>
+            {{ "simple" | translate }}
           </h2>
-          <p>No contracts. No surprise fees.</p>
+          <p>{{ "no" | translate }}</p>
         </div>
       </div>
     </div>
@@ -33,7 +29,7 @@
                 aria-controls="nav-monthly"
                 aria-selected="true"
               >
-                monthly plan
+                {{ "month" | translate }}
               </button>
               <button
                 class="nav-link active"
@@ -45,7 +41,7 @@
                 aria-controls="nav-annually"
                 aria-selected="false"
               >
-                Annual Plan
+                {{ "annual" | translate }}
               </button>
             </div>
           </nav>
@@ -68,17 +64,25 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                   <div class="price__item grey-bg mb-30 p-relative">
                     <div class="price__head">
-                      <h3>Gold</h3>
-                      <p>Perfect for small marketing teams</p>
+                      <h3>{{ "gold" | translate }}</h3>
+                      <p>{{ "small" | translate }}</p>
                     </div>
                     <div class="price__tag mb-25">
                       <h4>₸ 10.000 <span></span></h4>
                     </div>
                     <div class="price__features mb-40">
                       <ul>
-                        <li><i class="far fa-check"></i>Course Discussions</li>
-                        <li><i class="far fa-check"></i>Content Library</li>
-                        <li><i class="far fa-check"></i>1-hour Mentorship</li>
+                        <li>
+                          <i class="far fa-check"></i
+                          >{{ "discussions" | translate }}
+                        </li>
+                        <li>
+                          <i class="far fa-check"></i
+                          >{{ "library" | translate }}
+                        </li>
+                        <li>
+                          <i class="far fa-check"></i>{{ "1hour" | translate }}
+                        </li>
                       </ul>
                     </div>
                     <a [routerLink]="['/contact']" class="e-btn e-btn-4"
@@ -89,26 +93,33 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                   <div class="price__item grey-bg mb-30 p-relative">
                     <div class="price__offer">
-                      <span>Best Value</span>
+                      <span>{{ "best" | translate }}</span>
                     </div>
                     <div class="price__head">
-                      <h3>Diamond</h3>
-                      <p>Perfect for small marketing teams</p>
+                      <h3>{{ "diamond" | translate }}</h3>
+                      <p>{{ "small" | translate }}</p>
                     </div>
                     <div class="price__tag mb-25">
                       <h4>₸ 15.000 <span></span></h4>
                     </div>
                     <div class="price__features mb-40">
                       <ul>
-                        <li><i class="far fa-check"></i>Course Discussions</li>
-                        <li><i class="far fa-check"></i>Content Library</li>
-                        <li><i class="far fa-check"></i>1-hour Mentorship</li>
-                        <li><i class="far fa-check"></i>Online Course</li>
+                        <li>
+                          <i class="far fa-check"></i
+                          >{{ "discussions" | translate }}
+                        </li>
+                        <li>
+                          <i class="far fa-check"></i
+                          >{{ "library" | translate }}
+                        </li>
+                        <li>
+                          <i class="far fa-check"></i>{{ "1hour" | translate }}
+                        </li>
                       </ul>
                     </div>
-                    <a [routerLink]="['/contact']" class="e-btn e-btn-border"
-                      >Get Started</a
-                    >
+                    <a [routerLink]="['/contact']" class="e-btn e-btn-border">{{
+                      "started" | translate
+                    }}</a>
                   </div>
                 </div>
               </div>
@@ -123,47 +134,62 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                   <div class="price__item grey-bg mb-30 p-relative">
                     <div class="price__head">
-                      <h3>Gold</h3>
-                      <p>Perfect for small marketing teams</p>
+                      <h3>{{ "gold" | translate }}</h3>
+                      <p>{{ "small" | translate }}</p>
                     </div>
                     <div class="price__tag mb-25">
                       <h4>₸ 10.000 <span></span></h4>
                     </div>
                     <div class="price__features mb-40">
                       <ul>
-                        <li><i class="far fa-check"></i>Course Discussions</li>
-                        <li><i class="far fa-check"></i>Content Library</li>
-                        <li><i class="far fa-check"></i>1-hour Mentorship</li>
+                        <li>
+                          <i class="far fa-check"></i
+                          >{{ "discussions" | translate }}
+                        </li>
+                        <li>
+                          <i class="far fa-check"></i
+                          >{{ "library" | translate }}
+                        </li>
+                        <li>
+                          <i class="far fa-check"></i>{{ "1hour" | translate }}
+                        </li>
                       </ul>
                     </div>
-                    <a [routerLink]="['/contact']" class="e-btn e-btn-4"
-                      >Get Started</a
-                    >
+                    <a [routerLink]="['/contact']" class="e-btn e-btn-4">{{
+                      "started" | translate
+                    }}</a>
                   </div>
                 </div>
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                   <div class="price__item grey-bg mb-30 p-relative">
                     <div class="price__offer">
-                      <span>Best Value</span>
+                      <span>{{ "best" | translate }}</span>
                     </div>
                     <div class="price__head">
-                      <h3>Diamond</h3>
-                      <p>Perfect for small marketing teams</p>
+                      <h3>{{ "diamond" | translate }}</h3>
+                      <p>{{ "small" | translate }}</p>
                     </div>
                     <div class="price__tag mb-25">
                       <h4>₸ 15.000<span></span></h4>
                     </div>
                     <div class="price__features mb-40">
                       <ul>
-                        <li><i class="far fa-check"></i>Course Discussions</li>
-                        <li><i class="far fa-check"></i>Content Library</li>
-                        <li><i class="far fa-check"></i>1-hour Mentorship</li>
-                        <li><i class="far fa-check"></i>Online Course</li>
+                        <li>
+                          <i class="far fa-check"></i
+                          >{{ "discussions" | translate }}
+                        </li>
+                        <li>
+                          <i class="far fa-check"></i
+                          >{{ "library" | translate }}
+                        </li>
+                        <li>
+                          <i class="far fa-check"></i>{{ "1hour" | translate }}
+                        </li>
                       </ul>
                     </div>
-                    <a [routerLink]="['/contact']" class="e-btn e-btn-border"
-                      >Get Started</a
-                    >
+                    <a [routerLink]="['/contact']" class="e-btn e-btn-border">{{
+                      "started" | translate
+                    }}</a>
                   </div>
                 </div>
               </div>

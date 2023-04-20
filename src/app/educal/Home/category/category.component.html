@@ -4,18 +4,14 @@
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-8">
         <div class="section__title-wrapper mb-45">
           <h2 class="section__title">
-            Our
-            <span class="yellow-bg"
-              >popular
-              <img src="assets/img/shape/yellow-bg-2.png" alt="" /> </span
-            >course
+            {{ "popular" | translate }}
           </h2>
         </div>
       </div>
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-4">
         <div class="category__more mb-50 float-md-end fix">
           <a [routerLink]="['/courses']" class="link-btn">
-            View all categories
+            {{ "view" | translate }}
             <i class="far fa-arrow-right"></i>
             <i class="far fa-arrow-right"></i>
           </a>
@@ -47,9 +43,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Date analytics</a>
+              <a [routerLink]="['/course-details']">{{
+                "date-analytics" | translate
+              }}</a>
             </h4>
-            <p>Data is everything</p>
+            <p>{{ "date-analytics2" | translate }}</p>
           </div>
         </div>
       </div>
@@ -77,9 +75,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Business</a>
+              <a [routerLink]="['/course-details']">{{
+                "business" | translate
+              }}</a>
             </h4>
-            <p>Get your mind right</p>
+            <p>{{ "get-mind" | translate }}</p>
           </div>
         </div>
       </div>
@@ -107,9 +107,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Design</a>
+              <a [routerLink]="['/course-details']">{{
+                "design" | translate
+              }}</a>
             </h4>
-            <p>See the world differently</p>
+            <p>{{ "design2" | translate }}</p>
           </div>
         </div>
       </div>
@@ -137,9 +139,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Marketer</a>
+              <a [routerLink]="['/course-details']">{{
+                "marketer" | translate
+              }}</a>
             </h4>
-            <p>Learn how to sell</p>
+            <p>{{ "marketing2" | translate }}</p>
           </div>
         </div>
       </div>
@@ -167,9 +171,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Marketing</a>
+              <a [routerLink]="['/course-details']">{{
+                "marketing" | translate
+              }}</a>
             </h4>
-            <p>Learn how to make a profit</p>
+            <p>{{ "marketing" | translate }}</p>
           </div>
         </div>
       </div>
@@ -193,9 +199,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Finance</a>
+              <a [routerLink]="['/course-details']">{{
+                "finance" | translate
+              }}</a>
             </h4>
-            <p>Invest properlyо</p>
+            <p>{{ "finance2" | translate }}</p>
           </div>
         </div>
       </div>
@@ -227,9 +235,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Health & Fitness</a>
+              <a [routerLink]="['/course-details']">{{
+                "health-fitness" | translate
+              }}</a>
             </h4>
-            <p>Invest in your body</p>
+            <p>{{ "invest-body" | translate }}</p>
           </div>
         </div>
       </div>
@@ -263,9 +273,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Music</a>
+              <a [routerLink]="['/course-details']">{{
+                "music" | translate
+              }}</a>
             </h4>
-            <p>Give the world a sound</p>
+            <p>{{ "music2" | translate }}/p></p>
           </div>
         </div>
       </div>
@@ -293,9 +305,11 @@
           </div>
           <div class="category__content">
             <h4 class="category__title">
-              <a [routerLink]="['/course-details']">Prepare for the ENT</a>
+              <a [routerLink]="['/course-details']">{{
+                "prepare-ENT" | translate
+              }}</a>
             </h4>
-            <p>Get a 140 on the ENT</p>
+            <p>{{ "prepare-ENT2" | translate }}</p>
           </div>
         </div>
       </div>

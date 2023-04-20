@@ -29,10 +29,10 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a [routerLink]="['/']">Home</a>
+                  <a [routerLink]="['/']">{{ "home" | translate }}</a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a [routerLink]="['/courses']">Event</a>
+                  <a [routerLink]="['/courses']">{{ "events" | translate }}</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                   Become a product Manager learn the skills & job.
@@ -51,7 +51,7 @@
               <img src="assets/img/course/teacher/teacher-1.jpg" alt="" />
             </div>
             <div class="course__teacher-info-3">
-              <h5>Teacher</h5>
+              <h5>{{ "teacher" | translate }}</h5>
               <p><a href="#">Elon Gated</a></p>
             </div>
           </div>

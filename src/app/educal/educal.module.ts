@@ -13,13 +13,10 @@ import { EventsComponent } from './Home/events/events.component';
 import { PricingComponent } from './Home/pricing/pricing.component';
 import { CtaComponent } from './Home/cta/cta.component';
 import { FooterComponent } from './common/footer/footer.component';
-import { HeaderTwoComponent } from './common/header-two/header-two.component';
 import { AboutAreaComponent } from './common/about-area/about-area.component';
-import { BrandAreaComponent } from './common/brand-area/brand-area.component';
 import { CoursesPageComponent } from './courses/courses-page/courses-page.component';
 import { BreadcrumbComponent } from './common/breadcrumb/breadcrumb.component';
 import { CourseGridComponent } from './common/course-grid/course-grid.component';
-import { CourseListComponent } from './common/course-list/course-list.component';
 import { CoursesPageCoursesAreaComponent } from './courses/courses-page-courses-area/courses-page-courses-area.component';
 import { PaginationComponent } from './common/pagination/pagination.component';
 import { CoursesListPageComponent } from './courses-list-page/courses-list-main/courses-list-page.component';
@@ -38,13 +35,7 @@ import { BlogDetailsAreaComponent } from './blog-details/blog-details-area/blog-
 import { AboutMainComponent } from './about/about-main/about-main.component';
 import { InstructorMainComponent } from './instructor/instructor-main/instructor-main.component';
 import { InstructorAreaComponent } from './instructor/instructor-area/instructor-area.component';
-import { InstructorDetailsComponent } from './instructor-details/instructor-details-main/instructor-details.component';
-import { InstructorDetailsAreaComponent } from './instructor-details/instructor-details-area/instructor-details-area.component';
-import { EventDetailsMainComponent } from './event-details/event-details-main/event-details-main.component';
-import { EventDetailsAreaComponent } from './event-details/event-details-area/event-details-area.component';
 import { EventDetailsTitleComponent } from './event-details/event-details-title/event-details-title.component';
-import { CartComponent } from './cart/cart-main/cart.component';
-import { CartAreaComponent } from './cart/cart-area/cart-area.component';
 import { WishlistMainComponent } from './wishlist/wishlist-main/wishlist-main.component';
 import { WishlistAreaComponent } from './wishlist/wishlist-area/wishlist-area.component';
 import { CheckoutMainComponent } from './checkout/checkout-main/checkout-main.component';
@@ -78,13 +69,10 @@ import { TranslateModule } from '@ngx-translate/core';
     PricingComponent,
     CtaComponent,
     FooterComponent,
-    HeaderTwoComponent,
     AboutAreaComponent,
-    BrandAreaComponent,
     CoursesPageComponent,
     BreadcrumbComponent,
     CourseGridComponent,
-    CourseListComponent,
     CoursesPageCoursesAreaComponent,
     PaginationComponent,
     CoursesListPageComponent,
@@ -103,13 +91,7 @@ import { TranslateModule } from '@ngx-translate/core';
     AboutMainComponent,
     InstructorMainComponent,
     InstructorAreaComponent,
-    InstructorDetailsComponent,
-    InstructorDetailsAreaComponent,
-    EventDetailsMainComponent,
-    EventDetailsAreaComponent,
     EventDetailsTitleComponent,
-    CartComponent,
-    CartAreaComponent,
     WishlistMainComponent,
     WishlistAreaComponent,
     CheckoutMainComponent,
@@ -132,7 +114,7 @@ import { TranslateModule } from '@ngx-translate/core';
     SwiperModule,
     FormsModule,
     HttpClientModule,
-    TranslateModule
+    TranslateModule,
   ],
   providers: [
     AuthService,

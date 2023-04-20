@@ -62,13 +62,13 @@
               </ul>
             </div>
             <div class="course__view">
-              <h4>Showing 1 - 9 of 84</h4>
+              <h4>{{ "show" | translate }} 1 - 9</h4>
             </div>
           </div>
           <div class="course__sort d-flex justify-content-sm-end">
             <div class="course__sort-inner">
               <select>
-                <option>Default</option>
+                <option>{{ "default" | translate }}</option>
               </select>
             </div>
           </div>
@@ -284,7 +284,9 @@
 
           <div class="course__sidebar-widget grey-bg">
             <div class="course__sidebar-info">
-              <h3 class="course__sidebar-title">Categories</h3>
+              <h3 class="course__sidebar-title">
+                {{ "category" | translate }}
+              </h3>
               <ul>
                 <li>
                   <div
@@ -400,7 +402,8 @@
                   >
                     <input class="m-check-input" type="checkbox" id="m-free" />
                     <label class="m-check-label" for="m-free"
-                      >Free Courses (36)</label
+                      >{{ "free" | translate }}
+                      {{ "courses" | translate }} (36)</label
                     >
                   </div>
                 </li>
@@ -414,7 +417,7 @@
                       id="m-premium"
                     />
                     <label class="m-check-label" for="m-premium"
-                      >Premium Courses (184)</label
+                      >{{ "courses" | translate }} (184)</label
                     >
                   </div>
                 </li>
