@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit,Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { CoursesService } from '../../courses.service';
 
 @Component({
   selector: 'app-header-one',
@@ -89,7 +90,8 @@ export class HeaderOneComponent implements OnInit {
   }
 
   constructor(
-    public translate: TranslateService
+    public translate: TranslateService,
+    public coursesService: CoursesService,
   ) {
 
   }
@@ -97,6 +99,10 @@ export class HeaderOneComponent implements OnInit {
   ngOnInit(): void {
     this.selectedLanguage = localStorage.getItem('language') || 'kz';
     this.translate.use(this.selectedLanguage);
+    this.translate.currentLang
+    console.log('this.translate.currentLang :', this.translate.currentLang);
+    console.log('this.selectedLanguage :', this.selectedLanguage);
+    this.coursesService.getCategories();
   }
 
   onLanguageChange(language: string) {
