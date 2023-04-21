@@ -104,6 +104,13 @@ export class CourseDetailsAreaComponent implements OnInit {
   enroll(){
     this.usersService.buyCourse(this.courseId).subscribe(() => {
       window.location.reload();
-    })
+    },
+      (error) => {
+        console.log(error);
+        if(error.status == 401){
+          this.router.navigate(['/sign-in']);
+        }
+      }
+    )
   }
 }
