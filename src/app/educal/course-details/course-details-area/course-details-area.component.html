@@ -38,9 +38,7 @@
                 </ol>
               </nav>
             </div>
-            <span class="page__title-pre" [style.backgroundColor]="">{{
-              selectedCourse.category
-            }}</span>
+            <span class="page__title-pre" [style.backgroundColor]="selectedCourse.category.color">{{selectedCourse.category.name[translate.currentLang]}}</span>
             <h5 class="page__title-3">
               {{ selectedCourse.name }}
             </h5>
@@ -49,12 +47,20 @@
             <div
               class="course__teacher-3 d-flex align-items-center mr-70 mb-30"
             >
-              <div class="course__teacher-thumb-3 mr-15">
-                <img src="assets/img/course/teacher/teacher-1.jpg" alt="" />
-              </div>
-              <div class="course__teacher-info-3">
-                <h5>{{ "teacher" | translate }}</h5>
-                <p><a href="#">Elon Gated</a></p>
+              <div *ngIf="selectedCourse.teachers" class="course__instructor mb-45">
+                <ng-container *ngFor="let teacher of selectedCourse.teachers">
+                  <div class="course__instructor-wrapper d-md-flex align-items-center">
+                    <div class="course__instructor-item d-flex align-items-center mr-70">
+                      <div class="course__instructor-thumb mr-20">
+                        <img [src]="teacher.avatar" alt="" />
+                      </div>
+                      <div class="course__instructor-content">
+                        <h3>{{ teacher.name }}</h3>
+                        <p>{{ teacher.role }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
               </div>
             </div>
           </div>
@@ -160,32 +166,7 @@
                       </li>
                     </ul>
                   </div>
-                  <div
-                    *ngIf="selectedCourse.teachers"
-                    class="course__instructor mb-45"
-                  >
-                    <h3>Other Instructors</h3>
-                    <ng-container
-                      *ngFor="let teacher of selectedCourse.teachers"
-                    >
-                      <div
-                        class="course__instructor-wrapper d-md-flex align-items-center"
-                      >
-                        <div
-                          class="course__instructor-item d-flex align-items-center mr-70"
-                        >
-                          <div class="course__instructor-thumb mr-20">
-                            <img [src]="teacher.avatar" alt="" />
-                          </div>
-                          <div class="course__instructor-content">
-                            <h3>{{ teacher.name }}</h3>
-                            <p>{{ teacher.role }}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </ng-container>
-                  </div>
-
+              
                   <ng-container *ngIf="selectedCourse.video_lessons">
                     <ng-container
                       *ngFor="let video_lesson of selectedCourse.video_lessons"
@@ -508,6 +489,30 @@
                     </div>
                   </div>
                 </div>
+                <!-- generate template by iteration in above -->
+                <ng-container *ngFor="let lesson of selectedCourse.video_lessons">
+                  <div class="course__curriculum">
+                    <div class="accordion" id="course__accordion">
+                      <div class="accordion-item mb-50">
+                        <h2 class="accordion-header" id="week-01">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#week-01-content"
+                            aria-expanded="true" aria-controls="week-01-content">
+                            {{lesson.name}}
+                          </button>
+                        </h2>
+                        <div id="week-01-content" class="accordion-collapse collapse show" aria-labelledby="week-01"
+                          data-bs-parent="#course__accordion">
+                          <div class="accordion-body">
+                            <div [innerHTML]="lesson.iframe | safeHtml"
+                            ></div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+
               </div>
 
               <div
@@ -1016,8 +1021,8 @@
                               <img src="{{ course.courseImage }}" alt="" />
                             </a>
                             <div class="course__tag">
-                              <a href="#" [class]="course.color">{{
-                                course.category
+                              <a href="#" [class]="selectedCourse.category.color">{{
+                                selectedCourse.category.name[translate.currentLang]
                               }}</a>
                             </div>
                           </div>
@@ -1063,10 +1068,10 @@
                               class="course__status d-flex align-items-center"
                             >
                               <span [class]="course.color"
-                                >${{ course.price }}</span
+                                >₸{{ course.price }}</span
                               >
                               <span class="old-price"
-                                >${{ course.oldPrice }}</span
+                                >₸{{ course.oldPrice }}</span
                               >
                             </div>
                             <div class="course__btn">
@@ -1128,7 +1133,7 @@
               >
                 <div class="course__video-price">
                   <h5>
-                    <span>{{ selectedCourse.price + "$" }}</span>
+                    <span>{{ selectedCourse.price + "₸" }}</span>
                   </h5>
                 </div>
               </div>

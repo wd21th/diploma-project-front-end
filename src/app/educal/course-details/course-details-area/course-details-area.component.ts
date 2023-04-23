@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import SwiperCore, { Pagination, Autoplay } from "swiper";
 import { CoursesService } from '../../courses.service';
 import { UsersService } from '../../users.service';
+import { TranslateService } from '@ngx-translate/core';
 
 // install Swiper modules
 SwiperCore.use([ Pagination, Autoplay])
@@ -90,7 +91,13 @@ export class CourseDetailsAreaComponent implements OnInit {
   user: any = {}
   courseId: any;
 
-  constructor(public coursesService: CoursesService, public usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute,) { }
+  constructor(public coursesService: CoursesService, public usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute,
+  public translate: TranslateService
+  ) { 
+    if (!translate.currentLang) {
+      translate.use('kz');
+    }
+  }
 
   ngOnInit(): void {
     let id = this.activatedRoute.snapshot.params['id'];
