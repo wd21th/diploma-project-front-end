@@ -49,7 +49,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { ContactMainComponent } from './contact/contact-main/contact-main.component';
 import { ContactAreaComponent } from './contact/contact-area/contact-area.component';
 import { ContactInfoComponent } from './contact/contact-info/contact-info.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CoursesService } from './courses.service';
@@ -113,6 +113,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatTabsModule,
     SwiperModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     TranslateModule,
   ],

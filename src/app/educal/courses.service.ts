@@ -24,4 +24,8 @@ constructor(private http: HttpClient,) { }
       this.categories = data
     })
   }
+
+  addCourse(course: any) {
+    return this.http.post(environment.backendUrl + '/api/courses/', course);
+  }
 }
