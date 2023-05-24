@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CoursesService } from '../../courses.service';
+import { FormGroup, Validators, FormArray, FormBuilder } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { CoursesService } from '../courses.service';
 
 @Component({
-  selector: 'app-hero',
-  templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+  selector: 'app-teacher-courses',
+  templateUrl: './teacher-courses.component.html',
+  styleUrls: ['./teacher-courses.component.scss']
 })
-export class HeroComponent implements OnInit {
+export class TeacherCoursesComponent implements OnInit {
 
- 
   form: FormGroup = this.fb.group({
     category: ['', Validators.required],
     name: ['', Validators.required],
@@ -29,13 +28,30 @@ export class HeroComponent implements OnInit {
   get video_lessons() {
     return this.form.get('video_lessons') as FormArray;
   }
-  
+
   constructor(
     private fb: FormBuilder,
     public coursesService: CoursesService,
     public translate: TranslateService,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.translate.use(localStorage.getItem('language') || 'kz');
+    this.coursesService.getCategories();
+    this.coursesService.getTeacherCourses();
+    
+  }
+
+  addCourse() {
+    this.coursesService.addCourse(this.form.value).subscribe((data: any) => {
+      console.log(data);
+    })
+  }
+
+  addVideoLesson() {
+    this.video_lessons.push(this.fb.group({
+      name: '',
+      iframe: '',
+    }))
   }
 }

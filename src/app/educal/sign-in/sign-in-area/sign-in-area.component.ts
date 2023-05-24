@@ -20,11 +20,15 @@ export class SignInAreaComponent implements OnInit {
   user = {
     email: '',
     password: '',
+    isTeacher: false
   }
 
   submit(){
+    console.log('this.user :', this.user);
     this.auth.check(this.user).subscribe((res: any) => {
       localStorage.setItem('uid', res.uid);
+      // boolean as string
+      localStorage.setItem('isTeacher', this.user.isTeacher.toString());
       this.router.navigateByUrl('/');
     })
   }

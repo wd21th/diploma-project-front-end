@@ -15,6 +15,9 @@ import { SignInMainComponent } from './educal/sign-in/sign-in-main/sign-in-main.
 import { SignUpMainComponent } from './educal/sign-up/sign-up-main/sign-up-main.component';
 import { ErrorPageComponent } from './educal/error-page/error-page.component';
 import { ContactMainComponent } from './educal/contact/contact-main/contact-main.component';
+import { TeacherCoursesComponent } from './educal/teacher-courses/teacher-courses.component';
+import { TeacherCourseComponent } from './educal/teacher-course/teacher-course.component';
+import { TeacherCourseAddComponent } from './educal/teacher-course-add/teacher-course-add.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +26,19 @@ const routes: Routes = [
     path: 'courses',
     component: CoursesPageComponent,
   },
+  {
+    path: 'teacher-courses',
+    component: TeacherCoursesComponent,
+  },
+  {
+    path: 'teacher-courses/:id',
+    component: TeacherCourseComponent,
+  },
+  {
+    path: 'teacher-courses/add',
+    component: TeacherCourseAddComponent,
+  },
+  
   {
     path: 'courses-list',
     component: CoursesListPageComponent,

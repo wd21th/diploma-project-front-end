@@ -55,7 +55,9 @@
               </div>
               <div class="sign__action d-sm-flex justify-content-between mb-30">
                 <div class="sign__agree d-flex align-items-center">
-                  <input class="m-check-input" type="checkbox" id="m-agree" />
+                  <input class="m-check-input" type="checkbox" id="m-agree" 
+                  [(ngModel)]="user.isTeacher"
+                  />
                   <label class="m-check-label" for="m-agree"
                     >I'm a teacher
                   </label>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../courses.service';
 import { UsersService } from '../../users.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-courses',
@@ -15,7 +16,8 @@ export class CoursesComponent implements OnInit {
 
   constructor(
     public coursesService: CoursesService,
-    public usersService: UsersService
+    public usersService: UsersService,
+    public translate: TranslateService
   ) {}
 
   ngOnInit(): void {

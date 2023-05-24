@@ -99,9 +99,7 @@ export class HeaderOneComponent implements OnInit {
   ngOnInit(): void {
     this.selectedLanguage = localStorage.getItem('language') || 'kz';
     this.translate.use(this.selectedLanguage);
-    this.translate.currentLang
-    console.log('this.translate.currentLang :', this.translate.currentLang);
-    console.log('this.selectedLanguage :', this.selectedLanguage);
+    
     this.coursesService.getCategories();
   }
 

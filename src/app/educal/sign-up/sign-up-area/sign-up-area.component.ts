@@ -21,12 +21,14 @@ export class SignUpAreaComponent implements OnInit {
     full_name: '',
     email: '',
     password: '',
-    courses: []
+    isTeacher: false
   }
 
   submit(){
+    console.log('this.user :', this.user);
     this.auth.add(this.user).subscribe((data: any) => {
       localStorage.setItem('uid', data.uid);
+      localStorage.setItem('isTeacher', this.user.isTeacher.toString());
       this.router.navigateByUrl('/');
     })
   }

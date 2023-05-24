@@ -63,16 +63,12 @@
                   <i class="fal fa-lock"></i>
                 </div>
               </div>
-              <div class="sign__input-wrapper mb-10" *ngIf="false">
-                <h5>Re-Password</h5>
-                <div class="sign__input">
-                  <input type="text" placeholder="Re-Password" />
-                  <i class="fal fa-lock"></i>
-                </div>
-              </div>
               <div class="sign__action d-flex justify-content-between mb-30">
                 <div class="sign__agree d-flex align-items-center">
-                  <input class="m-check-input" type="checkbox" id="m-agree" />
+                  <input class="m-check-input" type="checkbox" id="m-agree"
+                  [(ngModel)]="user.isTeacher"
+                  [ngModelOptions]="{standalone: true}"
+                  />
                   <label class="m-check-label" for="m-agree"
                     >I'm a teacher
                   </label>

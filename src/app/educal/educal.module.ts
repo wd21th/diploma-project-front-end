@@ -57,6 +57,9 @@ import { UsersService } from './users.service';
 import { SafeHtmlPipe } from './safeHtml.pipe';
 import { AuthInterceptor } from './auth.interceptor';
 import { TranslateModule } from '@ngx-translate/core';
+import { TeacherCoursesComponent } from './teacher-courses/teacher-courses.component';
+import { TeacherCourseComponent } from './teacher-course/teacher-course.component';
+import { TeacherCourseAddComponent } from './teacher-course-add/teacher-course-add.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -102,10 +105,13 @@ import { TranslateModule } from '@ngx-translate/core';
     SignUpMainComponent,
     SignUpAreaComponent,
     ErrorPageComponent,
+    TeacherCoursesComponent,
     ContactMainComponent,
     ContactAreaComponent,
     ContactInfoComponent,
     SafeHtmlPipe,
+    TeacherCourseComponent,
+    TeacherCourseAddComponent,
   ],
   imports: [
     CommonModule,
