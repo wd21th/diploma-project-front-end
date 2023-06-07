@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { CoursesService } from '../courses.service';
 import { UsersService } from '../users.service';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable, forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-teacher-course',
@@ -12,6 +13,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class TeacherCourseComponent implements OnInit {
 
+  id: any;
   selectedCourse: any;
   
   form: FormGroup = this.fb.group({
@@ -38,44 +40,110 @@ export class TeacherCourseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let id = this.activatedRoute.snapshot.params['id'];
-    // alert('id: ' + id)
-    this.coursesService.getCourseById(id).subscribe((data: any) => {
-      this.selectedCourse = data;
+    this.translate.use(localStorage.getItem('language') || 'kz');
+    this.coursesService.getCategories();
+    this.coursesService.getTeacherCourses();
 
-      this.form.patchValue({
-        category: this.selectedCourse.category,
-        name: this.selectedCourse.name,
-        description: this.selectedCourse.description,
-        iframe: this.selectedCourse.iframe,
-        image_url: this.selectedCourse.image_url,
-        price: this.selectedCourse.price,
-      })
-      this.selectedCourse.video_lessons.forEach((video_lesson: any) => {
-        this.video_lessons.push(this.fb.group({
-          name: video_lesson.name,
-          iframe: video_lesson.iframe,
-        }))
-      })
-    });
+    this.id = this.activatedRoute.snapshot.params['id'];
+    if (this.id) {
+      this.coursesService.getCourseById(this.id).subscribe((data: any) => {
+        this.selectedCourse = data;
+  
+        this.form.patchValue({
+          category: this.selectedCourse.category.id,
+          name: this.selectedCourse.name,
+          description: this.selectedCourse.description,
+          iframe: this.selectedCourse.iframe,
+          image_url: this.selectedCourse.image_url,
+          price: this.selectedCourse.price,
+        })
+        console.log('this.selectedCourse.video_lessons :', this.selectedCourse.video_lessons);
+        this.selectedCourse.video_lessons.forEach((video_lesson: any) => {
+
+          if (!video_lesson.text) {
+            video_lesson.text = '';
+          }
+
+          video_lesson.attachment = null;
+          video_lesson.file = null;
+          this.video_lessons.push(this.fb.group(video_lesson))
+        })
+      });
+    } else {
+      this.video_lessons.push(this.fb.group({
+        name: '',
+        iframe: '',
+        text: '',
+        attachment: null,
+        file: null,
+      }))
+    }
+    
   }
 
 
 
 
   addCourse() {
-    this.coursesService.addCourse(this.form.value).subscribe((data: any) => {
-      console.log(data);
+    this.coursesService.addCourse(this.form.value).subscribe((videoLessonsID: any) => {
+      console.log(videoLessonsID);
+      const obs: Observable<any>[] = [];
+      this.video_lessons.controls.forEach((video_lesson: any, index) => {
+        obs.push(this.coursesService.attachFile(videoLessonsID[index], video_lesson.value.file))
+      })
+
+      forkJoin(obs).subscribe((data: any) => {
+        console.log('data :', data);
+      });
+    })
+  }
+
+  updateCourse() {
+    console.log('this.form.value :', this.form.value);
+
+    const obs: Observable<any>[] = [];
+
+    this.video_lessons.controls.forEach((video_lesson: any, index) => {
+      if (video_lesson.value.file) {
+        obs.push(this.coursesService.attachFile(video_lesson.value.id, video_lesson.value.file))
+      }
     })
 
-    
+    if (obs.length > 0) {
+      forkJoin(obs).subscribe((data: any) => {
+        this.updateCourseFields();
+      })
+    } else {
+      this.updateCourseFields();
+    }
+  }
+
+  updateCourseFields() {
+    this.coursesService.updateCourse(this.id, this.form.value).subscribe((data: any) => {
+      console.log(data);
+      window.location.reload();
+    })
   }
 
   addVideoLesson() {
     this.video_lessons.push(this.fb.group({
       name: '',
       iframe: '',
+      text: '',
+      attachment: null,
+      file: null,
     }))
+  }
+
+  addAttachment(event: any, i: number) {
+    const file = event.target.files[0];
+    console.log('file :', file);
+    const formData = new FormData();
+    formData.append('file', file);
+
+    this.video_lessons.controls[i].patchValue({
+      file: formData
+    })
   }
 
 

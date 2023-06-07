@@ -29,7 +29,13 @@ export class SignInAreaComponent implements OnInit {
       localStorage.setItem('uid', res.uid);
       // boolean as string
       localStorage.setItem('isTeacher', this.user.isTeacher.toString());
-      this.router.navigateByUrl('/');
+
+      if (this.user.isTeacher) {
+        this.router.navigateByUrl('/teacher-courses');
+      } else {
+        this.router.navigateByUrl('/');
+      }
+      
     })
   }
 

@@ -18,9 +18,11 @@ export class AuthInterceptor implements HttpInterceptor {
     const uid = localStorage.getItem('uid') || null;
     let authReq;
     if (uid) {
+      // Access-Control-Allow-Origin
       authReq = request.clone({
         setHeaders: {
           Authorization: uid,
+          'Access-Control-Allow-Origin': '*',
         }
       });
     } else {

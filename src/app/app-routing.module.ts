@@ -35,8 +35,9 @@ const routes: Routes = [
     component: TeacherCourseComponent,
   },
   {
-    path: 'teacher-courses/add',
-    component: TeacherCourseAddComponent,
+    path: 'teacher-courses-add',
+    // component: TeacherCourseAddComponent,
+    component: TeacherCourseComponent,
   },
   
   {

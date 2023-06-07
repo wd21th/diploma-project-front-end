@@ -57,6 +57,7 @@
                     type="checkbox"
                     id="m-agree"
                     [(ngModel)]="user.isTeacher"
+                  [ngModelOptions]="{ standalone: true }"
                   />
                   <label class="m-check-label" for="m-agree"
                     >I'm a teacher

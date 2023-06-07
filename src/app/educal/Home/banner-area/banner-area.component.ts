@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner-area.component.scss']
 })
 export class BannerAreaComponent implements OnInit {
+  href =''
 
   constructor() {
     
    }
 
   ngOnInit(): void {
+    this.href = window.location.href;
   }
 
 }

@@ -1,14 +1,14 @@
 <div style="padding: 40px">
   <div style="display: flex">
-    <h1 style="flex-grow: 1">Add Course Form</h1>
-    <button class="e-btn" [routerLink]="['./add']">Add Course</button>
+    <h1 style="flex-grow: 1">Course list</h1>
+    <button class="e-btn" [routerLink]="['/teacher-courses-add']">Add Course</button>
   </div>
 
   <ng-container *ngFor="let course of coursesService.teacherCourses">
     <a [routerLink]="['./' + course['id']]" class="teacher-edit">
       {{ course["name"] }}
     </a>
-    <button class="btn">
+    <button class="btn" (click)="deleteCourse(course['id'])">
       <svg
         width="54"
         height="54"
@@ -27,6 +27,7 @@
       </svg>
     </button>
     <svg
+      [routerLink]="['./' + course['id']]"
       class="edit"
       width="50"
       height="50"

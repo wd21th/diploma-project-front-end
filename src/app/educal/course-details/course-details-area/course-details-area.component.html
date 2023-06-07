@@ -37,12 +37,12 @@
                 class="course__instructor mb-45"
               >
                 <ng-container *ngFor="let teacher of selectedCourse.teachers">
-                  <div
-                    class="course__instructor-wrapper d-md-flex align-items-center"
-                  >
-                    <div
-                      class="course__instructor-item d-flex align-items-center mr-70"
-                    >
+                  <div class="course__instructor-wrapper d-md-flex align-items-center">
+                    <div class="course__instructor-item d-flex align-items-center mr-70">
+                      <div class="course__instructor-thumb mr-20">
+                        <img *ngIf="teacher.avatar" [src]="teacher.avatar" alt="" />
+                        <img *ngIf="!teacher.avatar" src="assets/img/icon/teacher-male-svgrepo-com.svg" alt="" />
+                      </div>
                       <div class="course__instructor-content">
                         <h3>{{ teacher.name }}</h3>
                         <p>{{ teacher.role }}</p>
@@ -134,6 +134,23 @@
                           >
                             {{ lesson.name }}
                           </button>
+                          
+                          <ng-container *ngIf="lesson.attachmentUrl">
+                            <div style="display: flex; align-items: center;
+                            flex-direction: column;
+                            padding: 10px;
+                            ">
+                              <div style="display: flex;">
+                                <a [href]="lesson.attachmentUrl" target="_blank">
+                                  <i class="fal fa-file-pdf"></i>
+                                </a>
+                                <span *ngIf="lesson.fileName" style="font-size: 18px;margin-left: 10px">{{lesson.fileName}}</span>
+                              </div>
+                              <p style="padding: 5px;">
+                                {{lesson.text}}
+                              </p>
+                            </div>
+                          </ng-container>
                         </h2>
                         <div class="course-video-popup">
                           <div

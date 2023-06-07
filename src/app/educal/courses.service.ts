@@ -30,9 +30,29 @@ constructor(private http: HttpClient,) { }
     return this.http.post(environment.backendUrl + '/api/courses/', course);
   }
 
+  updateCourse(id: string, course: any) {
+    return this.http.put(environment.backendUrl + '/api/courses/' + id, course);
+  }
+
+  deleteCourse(id: string) {
+    return this.http.delete(environment.backendUrl + '/api/courses/' + id);
+  }
+
+  attachFile(id: string, formData: any) {
+    return this.http.post(environment.backendUrl + '/api/attach-file/' + id, formData);
+  }
+
+  updateAttachFile(id: string, formData: any) {
+    return this.http.put(environment.backendUrl + '/api/attach-file/' + id, formData);
+  }
+
   getTeacherCourses() {
     return this.http.get(environment.backendUrl + '/api/teachers/courses').subscribe((data: any) => {
       this.teacherCourses = data
     });
+  }
+
+  downloadFile() {
+    return this.http.get('https://firebasestorage.googleapis.com/v0/b/bilim-all.appspot.com/o/files%2FCSA%20lab3.pdf?alt=media&token=5c62bbd4-c601-44ba-a195-848987d81a39', { responseType: 'blob' });
   }
 }
