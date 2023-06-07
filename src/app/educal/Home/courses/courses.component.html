@@ -13,7 +13,6 @@
     <div class="row">
       <mat-tab-group [@.disabled]="true" class="course__menu">
         <mat-tab>
-
           <div class="course_wrapper">
             <div class="row">
               <div
@@ -55,7 +54,9 @@
                         <span *ngIf="course?.isBought; else notBuy">
                           Уже куплено
                         </span>
-                        <ng-template #notBuy> Read more </ng-template>
+                        <ng-template #notBuy>
+                          {{ "read" | translate }}
+                        </ng-template>
                         <i class="far fa-arrow-right"></i>
                       </a>
                     </div>

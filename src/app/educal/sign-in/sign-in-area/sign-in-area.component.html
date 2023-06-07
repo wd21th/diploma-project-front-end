@@ -2,9 +2,6 @@
   <div class="sign__shape">
     <img class="man-1" src="assets/img/icon/sign/man-1.png" alt="" />
     <img class="man-2" src="assets/img/icon/sign/man-2.png" alt="" />
-    <img class="circle" src="assets/img/icon/sign/circle.png" alt="" />
-    <img class="zigzag" src="assets/img/icon/sign/zigzag.png" alt="" />
-    <img class="dot" src="assets/img/icon/sign/dot.png" alt="" />
     <img class="bg" src="assets/img/icon/sign/sign-up.png" alt="" />
   </div>
   <div class="container">
@@ -55,8 +52,11 @@
               </div>
               <div class="sign__action d-sm-flex justify-content-between mb-30">
                 <div class="sign__agree d-flex align-items-center">
-                  <input class="m-check-input" type="checkbox" id="m-agree" 
-                  [(ngModel)]="user.isTeacher"
+                  <input
+                    class="m-check-input"
+                    type="checkbox"
+                    id="m-agree"
+                    [(ngModel)]="user.isTeacher"
                   />
                   <label class="m-check-label" for="m-agree"
                     >I'm a teacher

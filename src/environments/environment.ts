@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  backendUrl: 'http://localhost:5000',
+  // backendUrl: 'http://localhost:5000',
+  // backendUrl: "http://192.168.0.32:5000/"
+  backendUrl: 'https://rocky-fortress-84759.herokuapp.com',
 };
 
 /*

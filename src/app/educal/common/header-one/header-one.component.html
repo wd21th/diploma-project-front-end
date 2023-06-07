@@ -79,9 +79,15 @@
                       <span>{{ "category" | translate }}</span>
                     </a>
                     <ul class="cat-submenu">
-                      <ng-container *ngFor="let category of coursesService.categories">
+                      <ng-container
+                        *ngFor="let category of coursesService.categories"
+                      >
                         <li>
-                          <a [routerLink]="['/courses']" [queryParams]="{category: category['id']}">{{category['name'][translate.currentLang]}}</a>
+                          <a
+                            [routerLink]="['/courses']"
+                            [queryParams]="{ category: category['id'] }"
+                            >{{ category["name"][translate.currentLang] }}</a
+                          >
                         </li>
                       </ng-container>
                     </ul>
@@ -150,7 +156,7 @@
             </div>
             <div class="header__search p-relative ml-50 d-none d-md-block">
               <form action="#">
-                <input type="text" placeholder="Search..." />
+                <input type="text" [placeholder]="'search' | translate" />
                 <button type="submit"><i class="fad fa-search"></i></button>
               </form>
             </div>
@@ -249,7 +255,7 @@
 
       <div class="sidebar__search p-relative mt-40">
         <form action="#">
-          <input type="text" placeholder="Search..." />
+          <input type="text" [placeholder]="'search' | translate" />
           <button type="submit"><i class="fad fa-search"></i></button>
         </form>
       </div>
