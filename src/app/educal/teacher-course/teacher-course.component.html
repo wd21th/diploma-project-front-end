@@ -96,11 +96,13 @@
               </ng-container>
 
 
-              <div class="course__curriculum-content d-sm-flex justify-content-between align-items-center">
-                <div style="text-align: center;width: 100%;" (click)="addVideoLesson()">
-                  + Add Lesson
+              <ng-container *ngIf="!id">
+                <div class="course__curriculum-content d-sm-flex justify-content-between align-items-center">
+                  <div style="text-align: center;width: 100%;" (click)="addVideoLesson()">
+                    + Add Lesson
+                  </div>
                 </div>
-              </div>
+              </ng-container>
             </div>
           </div>
         </div>
