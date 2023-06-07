@@ -5,13 +5,13 @@
         <div class="contact__wrapper">
           <div class="section__title-wrapper mb-40">
             <h2 class="section__title">
-              Get in<span class="yellow-bg yellow-bg-big"
-                >touch<img src="assets/img/shape/yellow-bg.png" alt=""
+              <span class="yellow-bg yellow-bg-big"
+                >{{ "intouch" | translate
+                }}<img src="assets/img/shape/yellow-bg.png" alt=""
               /></span>
             </h2>
             <p>
-              Have a question or just want to say hi? We'd love to hear from
-              you.
+              {{ "intouch2" | translate }}
             </p>
           </div>
           <div class="contact__form">
@@ -28,36 +28,34 @@
                 </div>
                 <div class="col-xxl-6 col-xl-6 col-md-6">
                   <div class="contact__form-input">
-                    <input type="email" placeholder="Your Email" name="email" />
+                    <input
+                      type="email"
+                      [placeholder]="'your_email' | translate"
+                      name="email"
+                    />
                   </div>
                 </div>
                 <div class="col-xxl-12">
                   <div class="contact__form-input">
-                    <input type="text" placeholder="Subject" name="subject" />
+                    <input
+                      type="text"
+                      [placeholder]="'subject' | translate"
+                      name="subject"
+                    />
                   </div>
                 </div>
                 <div class="col-xxl-12">
                   <div class="contact__form-input">
                     <textarea
-                      placeholder="Enter Your Message"
+                      [placeholder]="'entermessage' | translate"
                       name="message"
                     ></textarea>
                   </div>
                 </div>
                 <div class="col-xxl-12">
-                  <div
-                    class="contact__form-agree d-flex align-items-center mb-20"
-                  >
-                    <input class="e-check-input" type="checkbox" id="e-agree" />
-                    <label class="e-check-label" for="e-agree"
-                      >I agree to the<a href="#">Terms & Conditions</a></label
-                    >
-                  </div>
-                </div>
-                <div class="col-xxl-12">
                   <div class="contact__btn">
                     <button type="submit" class="e-btn">
-                      Send your message
+                      {{ "send" | translate }}
                     </button>
                   </div>
                 </div>
