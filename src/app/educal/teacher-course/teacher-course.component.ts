@@ -94,6 +94,7 @@ export class TeacherCourseComponent implements OnInit {
 
       forkJoin(obs).subscribe((data: any) => {
         console.log('data :', data);
+        window.history.back();
       });
     })
   }
