@@ -115,7 +115,8 @@ export class CourseDetailsAreaComponent implements OnInit {
       (error) => {
         console.log(error);
         if(error.status == 401){
-          this.router.navigate(['/sign-in']);
+          // this.router.navigate(['/sign-in']);
+          window.location.href = '/diploma-project-front-end/sign-in'
         }
       }
     )
