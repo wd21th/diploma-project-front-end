@@ -1,12 +1,13 @@
 .clearfix:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
 
 .payment-form {
   padding: 15px 10px;
-  background-color: #E6E6E6;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .payment-form__button {
@@ -15,9 +16,9 @@
   border-radius: 3px;
   border: none;
   outline: none;
-  background-color: #2BAD82;
+  background-color: #2b4eff;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 19px;
   cursor: pointer;
   margin: 15px 0 0 0;
@@ -38,7 +39,7 @@
 .notification {
   position: relative;
   padding: 15px 0;
-  border-bottom: solid 1px #DDDDDD;
+  border-bottom: solid 1px #dddddd;
 }
 
 .notification__icon {
@@ -84,7 +85,7 @@
 }
 
 .card-input {
-  border: 1px solid #C6C6C6;
+  border: 1px solid #c6c6c6;
   font-family: Arial;
   font-size: 16px;
   line-height: 22px;
@@ -129,6 +130,6 @@
 
 .card-info__text {
   font-size: 12px;
-  color: #6D6D6D;
+  color: #6d6d6d;
   line-height: 17px;
 }

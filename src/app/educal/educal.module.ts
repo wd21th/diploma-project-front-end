@@ -10,7 +10,6 @@ import { CategoryComponent } from './Home/category/category.component';
 import { BannerAreaComponent } from './Home/banner-area/banner-area.component';
 import { CoursesComponent } from './Home/courses/courses.component';
 import { EventsComponent } from './Home/events/events.component';
-import { PricingComponent } from './Home/pricing/pricing.component';
 import { CtaComponent } from './Home/cta/cta.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { AboutAreaComponent } from './common/about-area/about-area.component';
@@ -23,7 +22,6 @@ import { CoursesListPageComponent } from './courses-list-page/courses-list-main/
 import { CoursesListAreaComponent } from './courses-list-page/courses-list-area/courses-list-area.component';
 import { CourseSidebarMainComponent } from './course-sidebar/course-sidebar-main/course-sidebar-main.component';
 import { CourseSidebarAreaComponent } from './course-sidebar/course-sidebar-area/course-sidebar-area.component';
-import { RelatedCourseComponent } from './common/related-course/related-course.component';
 import { CourseDetailsComponent } from './course-details/course-details-main/course-details.component';
 import { CourseDetailsAreaComponent } from './course-details/course-details-area/course-details-area.component';
 import { BlogComponent } from './blog/blog-main/blog.component';
@@ -69,7 +67,6 @@ import { TeacherCourseAddComponent } from './teacher-course-add/teacher-course-a
     BannerAreaComponent,
     CoursesComponent,
     EventsComponent,
-    PricingComponent,
     CtaComponent,
     FooterComponent,
     AboutAreaComponent,
@@ -82,7 +79,6 @@ import { TeacherCourseAddComponent } from './teacher-course-add/teacher-course-a
     CoursesListAreaComponent,
     CourseSidebarMainComponent,
     CourseSidebarAreaComponent,
-    RelatedCourseComponent,
     CourseDetailsComponent,
     CourseDetailsAreaComponent,
     BlogComponent,
