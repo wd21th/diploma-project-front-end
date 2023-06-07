@@ -35,6 +35,7 @@
               <div
                 *ngIf="selectedCourse.teachers"
                 class="course__instructor mb-45"
+                 style="display: flex;"
               >
                 <ng-container *ngFor="let teacher of selectedCourse.teachers">
                   <div class="course__instructor-wrapper d-md-flex align-items-center">
@@ -136,11 +137,11 @@
                           </button>
                           
                           <ng-container *ngIf="lesson.attachmentUrl">
-                            <div style="display: flex; align-items: center;
+                            <div style="display: flex; 
                             flex-direction: column;
                             padding: 10px;
                             ">
-                              <div style="display: flex;">
+                              <div style="display: flex;align-items: center;">
                                 <a [href]="lesson.attachmentUrl" target="_blank">
                                   <i class="fal fa-file-pdf"></i>
                                 </a>
